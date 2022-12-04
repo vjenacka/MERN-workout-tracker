@@ -11,7 +11,8 @@ const WorkoutDetails = ({ workout }) => {
     if (!user) return;
 
     const response = await fetch(
-      "http://localhost:4000/api/workouts/" + workout._id,
+      "https://workout-tracker-api-0nz8.onrender.com/api/workouts/" +
+        workout._id,
       {
         method: "DELETE",
         headers: {

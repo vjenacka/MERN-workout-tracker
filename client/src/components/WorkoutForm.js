@@ -19,14 +19,17 @@ const WorkoutForm = () => {
     }
     const workout = { title, load, reps };
 
-    const response = await fetch("http://localhost:4000/api/workouts", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${user.token}`,
-      },
-      body: JSON.stringify(workout),
-    });
+    const response = await fetch(
+      "https://workout-tracker-api-0nz8.onrender.com/api/workouts",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+        body: JSON.stringify(workout),
+      }
+    );
 
     const json = await response.json();
     if (!response.ok) {
